@@ -1,0 +1,11 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:1-alpine
+    volumes:
+      - "./config:/etc/nginx/conf.d/"
+    networks:
+      - ambassador
+networks:
+  ambassador:
+    external: true

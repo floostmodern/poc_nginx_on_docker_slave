@@ -1,0 +1,14 @@
+version: "3"
+services:
+  server:
+    build: .
+    ports:
+      - 8000
+      - 8001
+    environment:
+      - MESSAGE=${MSG}
+    networks:
+      - ambassador
+networks:
+  ambassador:
+    external: true

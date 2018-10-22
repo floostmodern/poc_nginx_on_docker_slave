@@ -3,9 +3,13 @@ services:
   nginx:
     image: nginx:1-alpine
     volumes:
-      - "./config:/etc/nginx/conf.d/"
+      - ./config:/etc/nginx/conf.d
     networks:
       - ambassador
+    container_name: "ambassador"
+    ports:
+      - "8000:8000"
+      - "8001:8001"
 networks:
   ambassador:
     external: true

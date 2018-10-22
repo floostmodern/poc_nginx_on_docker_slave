@@ -9,7 +9,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.end_headers()
 
-        body = bytes("OK {} {}".format(NAME, PORT), 'utf8')
+        body = bytes("OK {} {}\n".format(NAME, PORT), 'utf8')
         self.wfile.write(body)
 
 httpd = HTTPServer(("", PORT), RequestHandler)
